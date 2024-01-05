@@ -1,0 +1,77 @@
+ const { MessageEmbed, Permissions, Client, Intents } = require('discord.js');
+const { readFileSync, writeFileSync } = require("fs")
+const express = require("express")
+const app = express()
+
+app.get("/", (req, res) => {
+  res.send("Hello!")
+})
+
+app.listen(3000, () => {
+  console.log("Project is ready!")
+})
+
+
+
+
+///حقوق عمر .*omar#6277
+const Discord = require("discord.js");
+///حقوق عمر .*omar#6277
+const client = new Discord.Client();
+///حقوق عمر .*omar#6277
+const prefix ="1";//البادئة:
+///حقوق عمر .*omar#6277
+client.on('ready',()=>{
+   console.log(`Bot is On! ${client.user.tag}`);
+});
+///حقوق عمر .*omar#6277
+
+///حقوق عمر .*omar#6277
+client.on('message', msg => {
+if(msg.content == 'auto') {
+  ///حقوق عمر .*omar#6277
+  ///حقوق عمر .*omar#6277
+msg.channel.send("line")
+}
+})
+///حقوق عمر .*omar#6277
+let line99 = `https://cdn.discordapp.com/attachments/1142535500150882384/1166299191014854686/A2142A6D-93B3-4009-BCC4-DC1C7C7FCB1C.png`
+client.on("message", message => {
+ 
+  if (message.guild.id != "1128300824012013589") return;//ايدي السيرفر
+  if (message.channel.id != "1166296020976672848") return;//ايدي الروم
+  if(message.author.id === client.user.id) return;
+  ///حقوق عمر .*omar#6277
+      if (message.author.send) {
+    message.channel.send(line99);//
+ 
+  }
+ ///حقوق عمر .*omar#6277
+})
+///حقوق عمر .*omar#6277
+client.on("message", message=>{
+if(message.content.startsWith("خط")){
+message.channel.send(line99)
+message.delete()
+}
+})
+///حقوق عمر .*omar#6277
+client.on("message", message => {
+if(message.content == ("embedline")){
+let embed = new Discord.MessageEmbed()
+.setTitle("line")
+  ///حقوق عمر .*omar#6277
+.setColor("BLACK")//لون حروف كبيرة
+.setImage(line99)
+  ///حقوق عمر .*omar#6277
+message.channel.send(embed)
+  ///حقوق عمر .*omar#6277
+message.delete()
+}
+}) 
+
+///حقوق عمر .*omar#6277
+
+
+///حقوق عمر .*omar#6277
+client.login(process.env.token); 
